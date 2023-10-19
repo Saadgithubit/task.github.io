@@ -41,7 +41,7 @@ function start(){
         title.innerHTML = dataObj.title
         var price = document.createElement('h4')
         price.id = 'price'
-        price.innerHTML = dataObj.price
+        price.innerHTML = '$ ' + dataObj.price 
         var des = document.createElement('h4')
         des.className = 'description'
         des.innerHTML = 'Description'
