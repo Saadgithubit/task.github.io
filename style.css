@@ -43,3 +43,19 @@ body , html{
 .description{
     margin-top: 10px;
 }
+
+.parent-div{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-items: center;
+}
+
+.parent-div img{
+    width: 70%;
+    height: 200px;
+}

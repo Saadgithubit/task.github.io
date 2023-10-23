@@ -3,11 +3,11 @@ var index = 0
 getData()
 
 function getData(){
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://dummyjson.com/products')
     .then(res => res.json())
     // .then(res => console.log(res[index] ))
     .then(res => {
-        data = res
+        data = res.products
         
     var loader = document.getElementById('loader')
     loader.className = 'hide'
@@ -15,27 +15,18 @@ function getData(){
     start()
 })
 }
+var container = document.getElementById('container')
 
 function start(){
-    console.log(data) 
-    // var parent = document.getElementById('parent-div')
-    // var img = parent.childNodes[1]
-    // img.src = data.image
-    // var title = document.getElementById('title')
-    // title.innerHTML = data.title
-    // var price = document.getElementById('price')
-    // price.innerHTML = data.price
-    // var description = document.getElementById('description')
-    // description.innerHTML = data.description 
-   var container = document.getElementById('container')
    
     for(var i = 0; i < data.length; i++){
         
         var dataObj = data[i]
         var parent = document.createElement('div')
         parent.id = 'parent-div'
+        parent.setAttribute('onclick' , 'clicked(event)')
         var img = document.createElement('img')
-        img.src = dataObj.image
+        img.src = dataObj.images[0]
         var title = document.createElement('h3')
         title.id = 'title'
         title.innerHTML = dataObj.title
@@ -55,11 +46,14 @@ function start(){
         parent.append(description)
         container.append(parent)
         }
-        
-        console.log(parent)
-
+    
 }
 
-
+function clicked(a){
+   console.log(a.target.children)
+    // var parent = document.getElementById('parent-div')
+    // container.innerHTML = parent.innerHTML
+    // container.className = 'parent-div'
+}
     
     
