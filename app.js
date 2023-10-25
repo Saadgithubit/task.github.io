@@ -24,7 +24,6 @@ function start(){
         var dataObj = data[i]
         var parent = document.createElement('div')
         parent.id = 'parent-div'
-        parent.setAttribute('onclick' , 'clicked(event)')
         var img = document.createElement('img')
         img.src = dataObj.images[0]
         var title = document.createElement('h3')
@@ -46,14 +45,24 @@ function start(){
         parent.append(description)
         container.append(parent)
         }
+
+       
     
+        // container.addEventListener('onclick' , clicked())
 }
 
-function clicked(a){
-   console.log(a.target.children)
-    // var parent = document.getElementById('parent-div')
-    // container.innerHTML = parent.innerHTML
-    // container.className = 'parent-div'
-}
+
+
+
+// function clicked(){
+//     console.log('show')
+// }
+
+// function clicked(a){
+//    console.log(a.target.children)
+//     // var parent = document.getElementById('parent-div')
+//     // container.innerHTML = parent.innerHTML
+//     // container.className = 'parent-div'
+// }
     
     
