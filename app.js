@@ -45,24 +45,10 @@ function start(){
         parent.append(description)
         container.append(parent)
         }
-
-       
-    
-        // container.addEventListener('onclick' , clicked())
 }
 
+function changeLocation(){
+   window.location.href = './src/signin.html'
+}
 
-
-
-// function clicked(){
-//     console.log('show')
-// }
-
-// function clicked(a){
-//    console.log(a.target.children)
-//     // var parent = document.getElementById('parent-div')
-//     // container.innerHTML = parent.innerHTML
-//     // container.className = 'parent-div'
-// }
-    
     
