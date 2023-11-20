@@ -31,6 +31,12 @@ signUpBtn.addEventListener('click' , ()=> {
       return
   }
 
+  const user = {
+    fullName: fullName.value,
+    email: email.value,
+    password: password.value
+  }
+
 
   register(user)
     
