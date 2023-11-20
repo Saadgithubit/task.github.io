@@ -1,35 +1,38 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { getAuth , createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
- 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBSeFEy16oTHcRbKgOV7TexVl_l5eKx1Eo",
-    authDomain: "assignment-5d71c.firebaseapp.com",
-    projectId: "assignment-5d71c",
-    storageBucket: "assignment-5d71c.appspot.com",
-    messagingSenderId: "1079759975934",
-    appId: "1:1079759975934:web:76f1a6b53df503134e3caf",
-    measurementId: "G-3YLWZTCNJQ"
-  };
+import { register } from './config.js'
 
- const app = initializeApp(firebaseConfig);
- const auth = getAuth(app);
- const btn = document.getElementById('signup-btn')
 
-   btn.addEventListener('click' , ()=>{
-    let email = document.getElementById('email')
-    let password = document.getElementById('password')
-    let name = document.getElementById('name')
+console.log();
+const signUpBtn = document.getElementById('signup-btn')
+signUpBtn.addEventListener('click' , ()=> {
+    const inputField = document.getElementsByTagName('input')
+    const fullName = inputField[0]
+    const fatherName = inputField[1]
+    const email = inputField[2]
+    const password =inputField[3]
+    const confirmPassword = inputField[4]
 
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      alert('Sign Up Successfull')
-      window.location.href = './signin.html'
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
+    if(!fullName.value || !fatherName.value || !email.value || !password.value || !confirmPassword.value){
+      alert('Please Fill All Fields')
+      return
+  }
 
-   })
+  if(password.value !== confirmPassword.value){
+      alert('Both passwords are not same')
+      return
+  }
+
+  if(fullName.value.length < 3){
+      alert('Please Enter Your Name with minimum 3 letters')
+      return
+  }
+
+  if(fatherName.value.length < 3){
+      alert('Please Enter Your Fathername with minimum 3 letters')
+      return
+  }
+
+
+  register(user)
+    
+  })
+  
