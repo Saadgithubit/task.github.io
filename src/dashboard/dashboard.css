@@ -1,0 +1,17 @@
+#container{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parent-div{
+     width: 300px;
+     height: 250px;
+     margin: 10px;
+     border: 1px solid black;
+}
+
+.parent-div img{
+    width: 100%;
+}
