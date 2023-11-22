@@ -1,15 +1,18 @@
-import {getSingleAdd} from "../config.js"
+import { getSingleAdd,  getUser } from "../config.js"
 
 addsDetails()
 
  async function addsDetails(){
 
-    const id = window.location.search.split('=')[1]
-    console.log(id);
-    const container = document.getElementById('container')
-    const ad = await getSingleAdd(id)
+
+   const id = window.location.search.split('=')[1]
+   const container = document.getElementById('container')
+   const ad = await getSingleAdd(id)
+    const user = await getUser(ad.uid)
+   console.log(ad);
 
 
+     console.log(user);
     const card = document.createElement('div')
     const img = document.createElement('img')
   img.src = ad.img
@@ -21,7 +24,6 @@ addsDetails()
   card.append(title)
   card.append(amount)
   container.append(card)
-//   console.log(ad);
 
 
 
